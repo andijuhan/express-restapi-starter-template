@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import express from 'express';
 import http from 'http';
 import bodyParser from 'body-parser';
@@ -22,6 +23,6 @@ app.use(bodyParser.json());
 
 app.use('/', router());
 
-server.listen(4000, () => {
-   console.log('Server running on http://localhost:4000');
+server.listen(process.env.PORT, () => {
+   console.log('Server running on port', process.env.PORT);
 });
